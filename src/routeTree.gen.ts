@@ -17,8 +17,10 @@ import { Route as CentresRouteImport } from './routes/centres'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ScannerRouteImport } from './routes/scanner'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as CentresIndexRouteImport } from './routes/centres.index'
 import { Route as CentresCentreIdRouteImport } from './routes/centres.$centreId'
 
@@ -62,6 +64,11 @@ const ImpactRoute = ImpactRouteImport.update({
   path: '/impact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
@@ -70,6 +77,11 @@ const ProfileRoute = ProfileRouteImport.update({
 const ScannerRoute = ScannerRouteImport.update({
   id: '/scanner',
   path: '/scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CentresIndexRoute = CentresIndexRouteImport.update({
@@ -92,8 +104,10 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
   '/impact': typeof ImpactRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/scanner': typeof ScannerRoute
+  '/terms': typeof TermsRoute
   '/centres/$centreId': typeof CentresCentreIdRoute
   '/centres/': typeof CentresIndexRoute
 }
@@ -105,8 +119,10 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
   '/impact': typeof ImpactRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/scanner': typeof ScannerRoute
+  '/terms': typeof TermsRoute
   '/centres/$centreId': typeof CentresCentreIdRoute
   '/centres': typeof CentresIndexRoute
 }
@@ -120,8 +136,10 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/how-it-works': typeof HowItWorksRoute
   '/impact': typeof ImpactRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/scanner': typeof ScannerRoute
+  '/terms': typeof TermsRoute
   '/centres/$centreId': typeof CentresCentreIdRoute
   '/centres/': typeof CentresIndexRoute
 }
@@ -136,8 +154,10 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/how-it-works'
     | '/impact'
+    | '/privacy'
     | '/profile'
     | '/scanner'
+    | '/terms'
     | '/centres/$centreId'
     | '/centres/'
   fileRoutesByTo: FileRoutesByTo
@@ -149,8 +169,10 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/how-it-works'
     | '/impact'
+    | '/privacy'
     | '/profile'
     | '/scanner'
+    | '/terms'
     | '/centres/$centreId'
     | '/centres'
   id:
@@ -163,8 +185,10 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/how-it-works'
     | '/impact'
+    | '/privacy'
     | '/profile'
     | '/scanner'
+    | '/terms'
     | '/centres/$centreId'
     | '/centres/'
   fileRoutesById: FileRoutesById
@@ -178,8 +202,10 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   HowItWorksRoute: typeof HowItWorksRoute
   ImpactRoute: typeof ImpactRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProfileRoute: typeof ProfileRoute
   ScannerRoute: typeof ScannerRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -240,6 +266,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImpactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -252,6 +285,13 @@ declare module '@tanstack/react-router' {
       path: '/scanner'
       fullPath: '/scanner'
       preLoaderRoute: typeof ScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/centres/': {
@@ -293,8 +333,10 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   HowItWorksRoute: HowItWorksRoute,
   ImpactRoute: ImpactRoute,
+  PrivacyRoute: PrivacyRoute,
   ProfileRoute: ProfileRoute,
   ScannerRoute: ScannerRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

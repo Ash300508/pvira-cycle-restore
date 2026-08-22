@@ -10,33 +10,176 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CentresRouteImport } from './routes/centres'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ScannerRouteImport } from './routes/scanner'
+import { Route as CentresIndexRouteImport } from './routes/centres.index'
+import { Route as CentresCentreIdRouteImport } from './routes/centres.$centreId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CentresRoute = CentresRouteImport.update({
+  id: '/centres',
+  path: '/centres',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScannerRoute = ScannerRouteImport.update({
+  id: '/scanner',
+  path: '/scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CentresIndexRoute = CentresIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CentresRoute,
+} as any)
+const CentresCentreIdRoute = CentresCentreIdRouteImport.update({
+  id: '/$centreId',
+  path: '/$centreId',
+  getParentRoute: () => CentresRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/centres': typeof CentresRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/impact': typeof ImpactRoute
+  '/profile': typeof ProfileRoute
+  '/scanner': typeof ScannerRoute
+  '/centres/$centreId': typeof CentresCentreIdRoute
+  '/centres/': typeof CentresIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/impact': typeof ImpactRoute
+  '/profile': typeof ProfileRoute
+  '/scanner': typeof ScannerRoute
+  '/centres/$centreId': typeof CentresCentreIdRoute
+  '/centres': typeof CentresIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/centres': typeof CentresRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/impact': typeof ImpactRoute
+  '/profile': typeof ProfileRoute
+  '/scanner': typeof ScannerRoute
+  '/centres/$centreId': typeof CentresCentreIdRoute
+  '/centres/': typeof CentresIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/auth'
+    | '/centres'
+    | '/dashboard'
+    | '/how-it-works'
+    | '/impact'
+    | '/profile'
+    | '/scanner'
+    | '/centres/$centreId'
+    | '/centres/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/auth'
+    | '/dashboard'
+    | '/how-it-works'
+    | '/impact'
+    | '/profile'
+    | '/scanner'
+    | '/centres/$centreId'
+    | '/centres'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/auth'
+    | '/centres'
+    | '/dashboard'
+    | '/how-it-works'
+    | '/impact'
+    | '/profile'
+    | '/scanner'
+    | '/centres/$centreId'
+    | '/centres/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AuthRoute: typeof AuthRoute
+  CentresRoute: typeof CentresRouteWithChildren
+  DashboardRoute: typeof DashboardRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  ImpactRoute: typeof ImpactRoute
+  ProfileRoute: typeof ProfileRoute
+  ScannerRoute: typeof ScannerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +191,110 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/centres': {
+      id: '/centres'
+      path: '/centres'
+      fullPath: '/centres'
+      preLoaderRoute: typeof CentresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scanner': {
+      id: '/scanner'
+      path: '/scanner'
+      fullPath: '/scanner'
+      preLoaderRoute: typeof ScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/centres/': {
+      id: '/centres/'
+      path: '/'
+      fullPath: '/centres/'
+      preLoaderRoute: typeof CentresIndexRouteImport
+      parentRoute: typeof CentresRoute
+    }
+    '/centres/$centreId': {
+      id: '/centres/$centreId'
+      path: '/$centreId'
+      fullPath: '/centres/$centreId'
+      preLoaderRoute: typeof CentresCentreIdRouteImport
+      parentRoute: typeof CentresRoute
+    }
   }
 }
 
+interface CentresRouteChildren {
+  CentresCentreIdRoute: typeof CentresCentreIdRoute
+  CentresIndexRoute: typeof CentresIndexRoute
+}
+
+const CentresRouteChildren: CentresRouteChildren = {
+  CentresCentreIdRoute: CentresCentreIdRoute,
+  CentresIndexRoute: CentresIndexRoute,
+}
+
+const CentresRouteWithChildren =
+  CentresRoute._addFileChildren(CentresRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AuthRoute: AuthRoute,
+  CentresRoute: CentresRouteWithChildren,
+  DashboardRoute: DashboardRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  ImpactRoute: ImpactRoute,
+  ProfileRoute: ProfileRoute,
+  ScannerRoute: ScannerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

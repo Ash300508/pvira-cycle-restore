@@ -36,7 +36,7 @@ export function Navbar() {
     queryClient.clear();
     await signOut();
     setOpen(false);
-    navigate({ to: "/auth", replace: true });
+    navigate({ to: "/auth", search: { mode: "login" }, replace: true });
   };
 
   return (

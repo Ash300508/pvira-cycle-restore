@@ -23,7 +23,7 @@ function CentreDetailPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Centre" title={data?.name ?? "Drop-off centre"} description={data?.city} />
+      <PageHeader eyebrow="Centre" title={data?.name ?? "Drop-off centre"} {...(data?.city ? { description: data.city } : {})} />
       <Section>
         {isPending ? (
           <LoadingState label="Loading centre…" />

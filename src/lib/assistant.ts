@@ -18,7 +18,7 @@ const RULES: Rule[] = [
   {
     match: /water|river|lake|immers|pond|sea/i,
     answer:
-      "Plaster of Paris, plastic and synthetic paints do not dissolve. They settle as sludge, block light and oxygen for aquatic life, and release heavy metals such as lead and chromium from paint layers. Unbaked natural clay is far safer, but even then cloth, plastic ornaments and flowers should be removed first. Wherever possible, use a PVIRA Drop-Off Centre — several have on-site reclamation tanks with a respectful ritual space so the tradition is preserved without harming the water body.",
+      "Plaster of Paris, plastic and synthetic paints do not dissolve. They settle as sludge, block light and oxygen for aquatic life, and release heavy metals such as lead and chromium from paint layers. Unbaked natural clay is far safer, but even then cloth, plastic ornaments and flowers should be removed first. Wherever possible, use a PAVITRA Drop-Off Centre — several have on-site reclamation tanks with a respectful ritual space so the tradition is preserved without harming the water body.",
   },
   {
     match: /pop|plaster/i,
@@ -43,7 +43,7 @@ const RULES: Rule[] = [
   {
     match: /dispose|disposal|how should i/i,
     answer:
-      "The responsible route is four steps: scan the idol to understand its material, find a PVIRA Drop-Off Centre that accepts that material, generate your drop-off reference and QR, then personally take the idol to the centre. PVIRA CYCLE does not collect idols from homes — the self drop-off model keeps the act of parting with the idol in your hands, which many families prefer.",
+      "The responsible route is four steps: scan the idol to understand its material, find a PAVITRA Drop-Off Centre that accepts that material, generate your drop-off reference and QR, then personally take the idol to the centre. PAVITRA CYCLE does not collect idols from homes — the self drop-off model keeps the act of parting with the idol in your hands, which many families prefer.",
   },
   {
     match: /centre|center|near|location|where/i,
@@ -53,12 +53,12 @@ const RULES: Rule[] = [
   {
     match: /point|badge|reward/i,
     answer:
-      "You earn PVIRA Eco Points for completed drop-offs, participating in recovery, referrals and educational activities. Points unlock the Eco Starter, Responsible Recycler, Green Guardian and PVIRA Champion badges. Points are a nudge, not the mission — the environmental outcome is what we measure.",
+      "You earn PAVITRA Eco Points for completed drop-offs, participating in recovery, referrals and educational activities. Points unlock the Eco Starter, Responsible Recycler, Green Guardian and PAVITRA Champion badges. Points are a nudge, not the mission — the environmental outcome is what we measure.",
   },
   {
     match: /pickup|collect|home/i,
     answer:
-      "PVIRA CYCLE deliberately has no pickup service. You take the idol to a drop-off centre yourself. This keeps the process respectful, avoids idols sitting in vehicles and lets facilities receive material in a controlled, sorted way.",
+      "PAVITRA CYCLE deliberately has no pickup service. You take the idol to a drop-off centre yourself. This keeps the process respectful, avoids idols sitting in vehicles and lets facilities receive material in a controlled, sorted way.",
   },
 ];
 

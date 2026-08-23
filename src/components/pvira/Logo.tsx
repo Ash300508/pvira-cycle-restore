@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export function Logo({ className, inverted = false }: { className?: string; inverted?: boolean }) {
   return (
-    <Link to="/" className={cn("group flex items-center gap-2.5", className)} aria-label="PVIRA CYCLE home">
+    <Link to="/" className={cn("group flex items-center gap-2.5", className)} aria-label="PAVITRA CYCLE home">
       <span
         className={cn(
           "flex size-9 items-center justify-center rounded-xl transition-transform group-hover:rotate-12",
@@ -26,7 +26,7 @@ export function Logo({ className, inverted = false }: { className?: string; inve
             inverted ? "text-forest-foreground" : "text-foreground",
           )}
         >
-          PVIRA <span className="text-leaf">CYCLE</span>
+          PAVITRA <span className="text-leaf">CYCLE</span>
         </span>
         <span className={cn("mt-0.5 text-[10px] uppercase tracking-[0.18em]", inverted ? "text-forest-foreground/60" : "text-muted-foreground")}>
           Respect · Recover

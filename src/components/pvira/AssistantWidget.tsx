@@ -18,7 +18,7 @@ export function AssistantWidget() {
       id: nextId(),
       role: "assistant",
       content:
-        "Namaste. I'm the PVIRA guide. Ask me about idol materials, environmental risk, drop-off centres or how recovery works.",
+        "Namaste. I'm the PAVITRA guide. Ask me about idol materials, environmental risk, drop-off centres or how recovery works.",
       isDemo: true,
     },
   ]);
@@ -51,7 +51,7 @@ export function AssistantWidget() {
         aria-expanded={open}
       >
         {open ? <X /> : <Sparkles />}
-        <span className="hidden sm:inline">{open ? "Close" : "Ask PVIRA"}</span>
+        <span className="hidden sm:inline">{open ? "Close" : "Ask PAVITRA"}</span>
       </Button>
 
       {open && (
@@ -61,7 +61,7 @@ export function AssistantWidget() {
               <Bot className="size-4" aria-hidden="true" />
             </span>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground">PVIRA Guide</p>
+              <p className="text-sm font-semibold text-foreground">PAVITRA Guide</p>
               <p className="truncate text-xs text-muted-foreground">Disposal & recovery assistant</p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export function AssistantWidget() {
                 {m.role === "assistant" && m.isDemo && <DemoBadge className="mt-2" label="Demo AI" />}
               </div>
             ))}
-            {pending && <p className="text-xs text-muted-foreground">PVIRA Guide is typing…</p>}
+            {pending && <p className="text-xs text-muted-foreground">PAVITRA Guide is typing…</p>}
             {messages.length <= 1 && (
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {SUGGESTED_QUESTIONS.slice(0, 4).map((q) => (
@@ -109,7 +109,7 @@ export function AssistantWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask a question…"
-              aria-label="Ask the PVIRA guide"
+              aria-label="Ask the PAVITRA guide"
             />
             <Button type="submit" size="icon" disabled={pending || !input.trim()} aria-label="Send">
               <Send />

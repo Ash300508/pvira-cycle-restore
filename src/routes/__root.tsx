@@ -83,14 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PVIRA CYCLE — Respectful Idol Disposal & Recovery" },
+      { title: "PAVITRA CYCLE — Respectful Idol Disposal & Recovery" },
       {
         name: "description",
         content:
-          "PVIRA CYCLE helps you identify your idol's material, find a verified drop-off centre and follow its recovery journey — protecting rivers, lakes and soil.",
+          "PAVITRA CYCLE helps you identify your idol's material, find a verified drop-off centre and follow its recovery journey — protecting rivers, lakes and soil.",
       },
-      { name: "author", content: "PVIRA CYCLE" },
-      { property: "og:title", content: "PVIRA CYCLE — Respectful Idol Disposal & Recovery" },
+      { name: "author", content: "PAVITRA CYCLE" },
+      { property: "og:title", content: "PAVITRA CYCLE — Respectful Idol Disposal & Recovery" },
       {
         property: "og:description",
         content: "Respect the tradition. Protect the environment. Recover the future.",

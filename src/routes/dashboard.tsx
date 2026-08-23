@@ -4,9 +4,9 @@ import { PageHeader, Section } from "@/components/pvira/Section";
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Your Dashboard — PVIRA CYCLE" },
+      { title: "Your Dashboard — PAVITRA CYCLE" },
       { name: "description", content: "Track your idol drop-offs, recovery status, notifications and Eco Points." },
-      { property: "og:title", content: "Your Dashboard — PVIRA CYCLE" },
+      { property: "og:title", content: "Your Dashboard — PAVITRA CYCLE" },
       { property: "og:description", content: "Track drop-offs, recovery status and Eco Points." },
     ],
   }),

@@ -8,9 +8,9 @@ import { centresQuery } from "@/lib/queries";
 export const Route = createFileRoute("/centres/")({
   head: () => ({
     meta: [
-      { title: "Drop-Off Centres — PVIRA CYCLE" },
-      { name: "description", content: "Find a PVIRA CYCLE drop-off centre near you, with accepted materials, hours and capacity." },
-      { property: "og:title", content: "Drop-Off Centres — PVIRA CYCLE" },
+      { title: "Drop-Off Centres — PAVITRA CYCLE" },
+      { name: "description", content: "Find a PAVITRA CYCLE drop-off centre near you, with accepted materials, hours and capacity." },
+      { property: "og:title", content: "Drop-Off Centres — PAVITRA CYCLE" },
       { property: "og:description", content: "Locate verified idol drop-off and recovery centres across India." },
     ],
   }),

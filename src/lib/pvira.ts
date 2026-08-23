@@ -1,10 +1,10 @@
 /**
- * PVIRA CYCLE domain constants and helpers.
+ * PAVITRA CYCLE domain constants and helpers.
  * Shared by the scanner, centre search, dashboards and admin tools.
  */
 
 export const BRAND = {
-  name: "PVIRA CYCLE",
+  name: "PAVITRA CYCLE",
   tagline: "Respect the Tradition. Protect the Environment. Recover the Future.",
 } as const;
 
@@ -33,7 +33,7 @@ export const MATERIAL_INFO: Record<
       "Unbaked natural clay (shadu mati) breaks down in water without leaving toxic residue. The main concern is decorative paint, cloth and non-clay ornaments attached to the idol.",
     recovery: "Clay is reclaimed in settling tanks and reused for new idols, pottery or soil conditioning.",
     action:
-      "Take this idol to a PVIRA Drop-Off Centre with a clay reclamation tank. Remove cloth, plastic ornaments and flowers first.",
+      "Take this idol to a PAVITRA Drop-Off Centre with a clay reclamation tank. Remove cloth, plastic ornaments and flowers first.",
   },
   "Plaster of Paris": {
     risk: "High",
@@ -41,41 +41,41 @@ export const MATERIAL_INFO: Record<
       "Plaster of Paris (calcium sulphate hemihydrate) does not dissolve. It settles as a hard sludge layer, blocks light and oxygen in water bodies and often carries heavy-metal paints.",
     recovery: "POP is crushed, de-painted and reused as construction filler, wall putty or industrial gypsum feedstock.",
     action:
-      "Take this idol to a PVIRA Drop-Off Centre that accepts Plaster of Paris materials. Do not immerse it in any water body.",
+      "Take this idol to a PAVITRA Drop-Off Centre that accepts Plaster of Paris materials. Do not immerse it in any water body.",
   },
   Plastic: {
     risk: "High",
     summary:
       "Plastic and thermocol idols never biodegrade. They fragment into microplastics that enter soil, water and the food chain.",
     recovery: "Plastics are cleaned, shredded and sent to registered recyclers for pellet manufacturing.",
-    action: "Take this idol to a PVIRA Drop-Off Centre with a plastic shredding line.",
+    action: "Take this idol to a PAVITRA Drop-Off Centre with a plastic shredding line.",
   },
   Metal: {
     risk: "Moderate",
     summary:
       "Metal idols are durable and often reusable. Discarded metal can leach coatings, but it is one of the most valuable recoverable materials.",
     recovery: "Metal is segregated by type and sent for foundry recovery, or restored and re-gifted where appropriate.",
-    action: "Take this idol to a PVIRA Drop-Off Centre with a metal segregation bay, or consider respectful reuse.",
+    action: "Take this idol to a PAVITRA Drop-Off Centre with a metal segregation bay, or consider respectful reuse.",
   },
   "Paper/Mud": {
     risk: "Low",
     summary:
       "Paper pulp and mud idols are largely biodegradable, but printing inks and adhesives should still be handled at a facility.",
     recovery: "Paper and mud are composted or pulped for reuse in eco-idol manufacturing.",
-    action: "Take this idol to a PVIRA Drop-Off Centre with a composting yard.",
+    action: "Take this idol to a PAVITRA Drop-Off Centre with a composting yard.",
   },
   "Mixed Material": {
     risk: "High",
     summary:
       "Mixed idols combine clay or POP with plastic, metal wire, synthetic paint and glitter. They cannot be treated as a single waste stream.",
     recovery: "Facilities dismantle the idol by hand and route each fraction to the right recovery process.",
-    action: "Take this idol to a PVIRA Drop-Off Centre that accepts mixed materials for manual dismantling.",
+    action: "Take this idol to a PAVITRA Drop-Off Centre that accepts mixed materials for manual dismantling.",
   },
   Other: {
     risk: "Moderate",
     summary: "The material could not be matched to a known category. A facility assessment is the safest route.",
     recovery: "Staff assess the idol on arrival and choose the appropriate recovery stream.",
-    action: "Take this idol to a PVIRA Drop-Off Centre that accepts other or unclassified materials.",
+    action: "Take this idol to a PAVITRA Drop-Off Centre that accepts other or unclassified materials.",
   },
   Unknown: {
     risk: "Moderate",
@@ -129,10 +129,10 @@ export const RECOVERY_TIMELINE: { status: DropOffStatus; label: string; descript
 ];
 
 export const BADGES = [
-  { name: "Eco Starter", points: 0, description: "Joined PVIRA CYCLE and took the first step." },
+  { name: "Eco Starter", points: 0, description: "Joined PAVITRA CYCLE and took the first step." },
   { name: "Responsible Recycler", points: 100, description: "Completed your first responsible drop-off." },
   { name: "Green Guardian", points: 400, description: "Repeatedly chose recovery over improper disposal." },
-  { name: "PVIRA Champion", points: 1000, description: "A community leader in responsible idol disposal." },
+  { name: "PAVITRA Champion", points: 1000, description: "A community leader in responsible idol disposal." },
 ] as const;
 
 export function badgeForPoints(points: number) {

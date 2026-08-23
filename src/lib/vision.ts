@@ -73,7 +73,7 @@ function demoAnalyse(file: File): ScanResult {
  */
 async function productionAnalyse(_file: File): Promise<ScanResult> {
   throw new Error(
-    "Production vision mode is selected but no vision provider is wired up yet. Switch VITE_PVIRA_AI_MODE back to demo.",
+    "Production vision mode is selected but no vision provider is wired up yet. Switch VITE_PAVITRA_AI_MODE back to demo.",
   );
 }
 

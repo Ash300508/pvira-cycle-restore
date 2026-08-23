@@ -4,9 +4,9 @@ import { PageHeader, Section } from "@/components/pvira/Section";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Use — PVIRA CYCLE" },
-      { name: "description", content: "The terms that apply when you use PVIRA CYCLE to register an idol drop-off." },
-      { property: "og:title", content: "Terms of Use — PVIRA CYCLE" },
+      { title: "Terms of Use — PAVITRA CYCLE" },
+      { name: "description", content: "The terms that apply when you use PAVITRA CYCLE to register an idol drop-off." },
+      { property: "og:title", content: "Terms of Use — PAVITRA CYCLE" },
       { property: "og:description", content: "Terms that apply when registering an idol drop-off." },
     ],
   }),
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/terms")({
 const SECTIONS = [
   {
     title: "Self drop-off only",
-    body: "PVIRA CYCLE does not collect idols from homes and does not operate a pickup service. You are responsible for transporting the idol to the drop-off centre you select.",
+    body: "PAVITRA CYCLE does not collect idols from homes and does not operate a pickup service. You are responsible for transporting the idol to the drop-off centre you select.",
   },
   {
     title: "AI results are guidance",

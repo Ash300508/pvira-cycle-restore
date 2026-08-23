@@ -21,6 +21,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ScannerRouteImport } from './routes/scanner'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TrackRouteImport } from './routes/track'
 import { Route as CentresIndexRouteImport } from './routes/centres.index'
 import { Route as CentresCentreIdRouteImport } from './routes/centres.$centreId'
 
@@ -84,6 +85,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrackRoute = TrackRouteImport.update({
+  id: '/track',
+  path: '/track',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CentresIndexRoute = CentresIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/profile': typeof ProfileRoute
   '/scanner': typeof ScannerRoute
   '/terms': typeof TermsRoute
+  '/track': typeof TrackRoute
   '/centres/$centreId': typeof CentresCentreIdRoute
   '/centres/': typeof CentresIndexRoute
 }
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/profile': typeof ProfileRoute
   '/scanner': typeof ScannerRoute
   '/terms': typeof TermsRoute
+  '/track': typeof TrackRoute
   '/centres/$centreId': typeof CentresCentreIdRoute
   '/centres': typeof CentresIndexRoute
 }
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   '/profile': typeof ProfileRoute
   '/scanner': typeof ScannerRoute
   '/terms': typeof TermsRoute
+  '/track': typeof TrackRoute
   '/centres/$centreId': typeof CentresCentreIdRoute
   '/centres/': typeof CentresIndexRoute
 }
@@ -158,6 +167,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/scanner'
     | '/terms'
+    | '/track'
     | '/centres/$centreId'
     | '/centres/'
   fileRoutesByTo: FileRoutesByTo
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/scanner'
     | '/terms'
+    | '/track'
     | '/centres/$centreId'
     | '/centres'
   id:
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/scanner'
     | '/terms'
+    | '/track'
     | '/centres/$centreId'
     | '/centres/'
   fileRoutesById: FileRoutesById
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   ProfileRoute: typeof ProfileRoute
   ScannerRoute: typeof ScannerRoute
   TermsRoute: typeof TermsRoute
+  TrackRoute: typeof TrackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -294,6 +307,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/track': {
+      id: '/track'
+      path: '/track'
+      fullPath: '/track'
+      preLoaderRoute: typeof TrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/centres/': {
       id: '/centres/'
       path: '/'
@@ -337,6 +357,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProfileRoute: ProfileRoute,
   ScannerRoute: ScannerRoute,
   TermsRoute: TermsRoute,
+  TrackRoute: TrackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

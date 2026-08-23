@@ -8,9 +8,9 @@ import { centreQuery } from "@/lib/queries";
 export const Route = createFileRoute("/centres/$centreId")({
   head: () => ({
     meta: [
-      { title: "Centre Details — PVIRA CYCLE" },
-      { name: "description", content: "Accepted materials, opening hours, capacity and directions for this PVIRA drop-off centre." },
-      { property: "og:title", content: "Centre Details — PVIRA CYCLE" },
+      { title: "Centre Details — PAVITRA CYCLE" },
+      { name: "description", content: "Accepted materials, opening hours, capacity and directions for this PAVITRA drop-off centre." },
+      { property: "og:title", content: "Centre Details — PAVITRA CYCLE" },
       { property: "og:description", content: "Accepted materials, hours and directions for this drop-off centre." },
     ],
   }),

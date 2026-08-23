@@ -4,9 +4,9 @@ import { PageHeader, Section } from "@/components/pvira/Section";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — PVIRA CYCLE" },
-      { name: "description", content: "How PVIRA CYCLE collects, uses and protects your account, drop-off and location data." },
-      { property: "og:title", content: "Privacy Policy — PVIRA CYCLE" },
+      { title: "Privacy Policy — PAVITRA CYCLE" },
+      { name: "description", content: "How PAVITRA CYCLE collects, uses and protects your account, drop-off and location data." },
+      { property: "og:title", content: "Privacy Policy — PAVITRA CYCLE" },
       { property: "og:description", content: "How we handle your account, drop-off and location data." },
     ],
   }),

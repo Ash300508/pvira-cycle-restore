@@ -4,10 +4,10 @@ import { PageHeader, Section } from "@/components/pvira/Section";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works — PVIRA CYCLE" },
+      { title: "How It Works — PAVITRA CYCLE" },
       { name: "description", content: "Scan your idol, find a drop-off centre, hand it over and follow its recovery journey." },
-      { property: "og:title", content: "How It Works — PVIRA CYCLE" },
-      { property: "og:description", content: "Scan, drop off, recover: the PVIRA CYCLE self drop-off journey." },
+      { property: "og:title", content: "How It Works — PAVITRA CYCLE" },
+      { property: "og:description", content: "Scan, drop off, recover: the PAVITRA CYCLE self drop-off journey." },
     ],
   }),
   component: HowItWorksPage,
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/how-it-works")({
 function HowItWorksPage() {
   return (
     <>
-      <PageHeader eyebrow="Process" title="How PVIRA CYCLE works" description="A respectful, four-step self drop-off journey." />
+      <PageHeader eyebrow="Process" title="How PAVITRA CYCLE works" description="A respectful, four-step self drop-off journey." />
       <Section>
         <ol className="grid gap-4 md:grid-cols-2">
           {[

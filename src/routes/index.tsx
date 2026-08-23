@@ -61,7 +61,7 @@ const FEATURES = [
     icon: <Trophy className="size-5" />,
     title: "Eco Points & Badges",
     description:
-      "Earn Eco Points for completed drop-offs and unlock badges from Eco Starter through to PVIRA Champion.",
+      "Earn Eco Points for completed drop-offs and unlock badges from Eco Starter through to PAVITRA Champion.",
   },
 ];
 
@@ -81,7 +81,7 @@ const STEPS = [
   {
     number: "STEP 03",
     title: "Drop it off yourself",
-    description: "You take the idol there in person — PVIRA never collects from homes. Show your QR pass at the counter.",
+    description: "You take the idol there in person — PAVITRA never collects from homes. Show your QR pass at the counter.",
     icon: <QrIcon className="size-5" />,
   },
   {
@@ -111,7 +111,7 @@ function Index() {
               Retire your idol with <span className="text-leaf">respect</span>, not into a river.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {BRAND.tagline} PVIRA CYCLE identifies what your idol is made of, points you to a verified drop-off centre
+              {BRAND.tagline} PAVITRA CYCLE identifies what your idol is made of, points you to a verified drop-off centre
               and shows you exactly how its materials are recovered.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -202,7 +202,7 @@ function Index() {
           align="center"
           eyebrow="How it works"
           title="Four respectful steps"
-          description="You stay in control of the idol the entire time. PVIRA CYCLE only makes the responsible route obvious."
+          description="You stay in control of the idol the entire time. PAVITRA CYCLE only makes the responsible route obvious."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step) => (

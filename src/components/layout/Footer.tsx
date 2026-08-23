@@ -57,7 +57,7 @@ export function Footer() {
       </div>
       <div className="border-t border-forest-foreground/12">
         <p className="mx-auto w-full max-w-7xl px-4 py-6 text-xs text-forest-foreground/55 sm:px-6">
-          © 2026 PVIRA CYCLE. All rights reserved.
+          © 2026 PAVITRA CYCLE. All rights reserved.
         </p>
       </div>
     </footer>

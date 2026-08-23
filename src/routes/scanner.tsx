@@ -11,10 +11,10 @@ import { analyseIdolImage, ImageValidationError, type ScanResult } from "@/lib/v
 export const Route = createFileRoute("/scanner")({
   head: () => ({
     meta: [
-      { title: "AI Idol Scanner — PVIRA CYCLE" },
+      { title: "AI Idol Scanner — PAVITRA CYCLE" },
       { name: "description", content: "Upload a photo of your idol to detect its material, environmental risk and recovery route." },
-      { property: "og:title", content: "AI Idol Scanner — PVIRA CYCLE" },
-      { property: "og:description", content: "Detect idol material and environmental risk with the PVIRA AI Scanner." },
+      { property: "og:title", content: "AI Idol Scanner — PAVITRA CYCLE" },
+      { property: "og:description", content: "Detect idol material and environmental risk with the PAVITRA AI Scanner." },
     ],
   }),
   component: ScannerPage,

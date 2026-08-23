@@ -4,9 +4,9 @@ import { PageHeader, Section } from "@/components/pvira/Section";
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Your Profile — PVIRA CYCLE" },
-      { name: "description", content: "Manage your PVIRA CYCLE profile details, contact number and notification settings." },
-      { property: "og:title", content: "Your Profile — PVIRA CYCLE" },
+      { title: "Your Profile — PAVITRA CYCLE" },
+      { name: "description", content: "Manage your PAVITRA CYCLE profile details, contact number and notification settings." },
+      { property: "og:title", content: "Your Profile — PAVITRA CYCLE" },
       { property: "og:description", content: "Manage your profile details and preferences." },
     ],
   }),

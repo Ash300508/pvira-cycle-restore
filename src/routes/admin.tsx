@@ -4,9 +4,9 @@ import { PageHeader, Section } from "@/components/pvira/Section";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Admin Console — PVIRA CYCLE" },
-      { name: "description", content: "Manage drop-off centres, records and recovery workflows across the PVIRA network." },
-      { property: "og:title", content: "Admin Console — PVIRA CYCLE" },
+      { title: "Admin Console — PAVITRA CYCLE" },
+      { name: "description", content: "Manage drop-off centres, records and recovery workflows across the PAVITRA network." },
+      { property: "og:title", content: "Admin Console — PAVITRA CYCLE" },
       { property: "og:description", content: "Manage centres, records and recovery workflows." },
       { name: "robots", content: "noindex" },
     ],

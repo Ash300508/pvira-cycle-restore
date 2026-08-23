@@ -14,12 +14,12 @@ import { recordByReferenceQuery } from "@/lib/queries";
 export const Route = createFileRoute("/track")({
   head: () => ({
     meta: [
-      { title: "Track My Idol — PVIRA CYCLE" },
+      { title: "Track My Idol — PAVITRA CYCLE" },
       {
         name: "description",
         content: "Enter your drop-off reference ID to follow each stage of your idol's recovery journey.",
       },
-      { property: "og:title", content: "Track My Idol — PVIRA CYCLE" },
+      { property: "og:title", content: "Track My Idol — PAVITRA CYCLE" },
       { property: "og:description", content: "Follow every stage of your idol's recovery with your reference ID." },
     ],
   }),

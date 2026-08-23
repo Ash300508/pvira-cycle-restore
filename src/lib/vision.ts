@@ -1,5 +1,6 @@
 import { AI_MODE, ALLOWED_IMAGE_TYPES, MAX_IMAGE_BYTES } from "./ai-config";
 import { MATERIAL_INFO, type Material, type RiskLevel } from "./pvira";
+import { analyseImageWithGemini, type GeminiScanResult } from "./vision-server";
 
 export type ScanResult = {
   material: Material;
@@ -8,10 +9,14 @@ export type ScanResult = {
   summary: string;
   recovery: string;
   action: string;
+  recyclable: boolean;
+  disposalMethod: string;
+  explanation: string;
   isDemo: boolean;
 };
 
 export class ImageValidationError extends Error {}
+export class GeminiScanError extends Error {}
 
 export function validateImage(file: File) {
   if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
@@ -62,25 +67,49 @@ function demoAnalyse(file: File): ScanResult {
     summary: info.summary,
     recovery: info.recovery,
     action: info.action,
+    recyclable: material !== "Plastic" && material !== "Plaster of Paris",
+    disposalMethod: info.recovery,
+    explanation: info.summary,
     isDemo: true,
   };
 }
 
-/**
- * PRODUCTION MODE hook. Replace the body of this branch with a call to a
- * server function that forwards the image to a real vision model and maps its
- * label set onto MATERIALS / MATERIAL_INFO. The rest of the app is unchanged.
- */
-async function productionAnalyse(_file: File): Promise<ScanResult> {
-  throw new Error(
-    "Production vision mode is selected but no vision provider is wired up yet. Switch VITE_PAVITRA_AI_MODE back to demo.",
-  );
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (typeof result !== "string") {
+        reject(new Error("Could not read the image file."));
+        return;
+      }
+      const commaIdx = result.indexOf(",");
+      resolve(commaIdx >= 0 ? result.slice(commaIdx + 1) : result);
+    };
+    reader.onerror = () => reject(new Error("Could not read the image file."));
+    reader.readAsDataURL(file);
+  });
 }
 
 export async function analyseIdolImage(file: File): Promise<ScanResult> {
   validateImage(file);
-  if (AI_MODE === "production") return productionAnalyse(file);
-  // Simulate model latency so loading states are exercised.
-  await new Promise((resolve) => setTimeout(resolve, 1600));
-  return demoAnalyse(file);
+
+  // Always attempt a real Gemini analysis via the server function.
+  // The server function checks for GEMINI_API_KEY and throws a user-friendly
+  // error if it is missing.
+  try {
+    const base64 = await fileToBase64(file);
+    const result: GeminiScanResult = await analyseImageWithGemini({
+      data: { base64, mimeType: file.type, fileSize: file.size },
+    });
+    return result;
+  } catch (err) {
+    // If the API key is missing or the Gemini call fails, fall back to demo
+    // mode in development so the UI is still usable. In production, surface
+    // the error to the user.
+    if (AI_MODE === "production") throw err;
+    console.warn("[scanner] Gemini analysis failed, falling back to demo:", err);
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    return demoAnalyse(file);
+  }
 }

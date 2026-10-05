@@ -17,6 +17,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AssistantWidget } from "@/components/pvira/AssistantWidget";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/hooks/useAuth";
+import { HAS_BACKEND, isMissingBackendError } from "@/lib/backend-status";
 
 
 function NotFoundComponent() {
@@ -47,6 +48,34 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
+
+  if (isMissingBackendError(error)) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background px-4">
+        <div className="max-w-md rounded-2xl border border-border bg-card p-8 text-center shadow-soft">
+          <h1 className="text-xl font-semibold tracking-tight text-foreground">This section is offline</h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            The app can't reach its data right now, so accounts, centres and tracking are unavailable. You can still
+            attach and preview idol photos in the scanner.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <a
+              href="/scanner"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            >
+              Open photo scanner
+            </a>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-accent"
+            >
+              Go home
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -141,6 +170,11 @@ function RootComponent() {
       <AuthProvider>
         <div className="flex min-h-screen flex-col bg-background">
           <Navbar />
+          {!HAS_BACKEND && (
+            <div role="status" className="border-b border-border bg-sand px-4 py-2 text-center text-sm text-foreground">
+              Offline preview: accounts, centres and tracking are unavailable right now. The photo scanner still works.
+            </div>
+          )}
           <main className="flex-1">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />

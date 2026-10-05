@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
+import { HAS_BACKEND } from "@/lib/backend-status";
 
 export type Profile = {
   id: string;
@@ -23,13 +24,13 @@ type AuthContextValue = {
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(HAS_BACKEND);
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
   const load = async (uid: string | undefined) => {
-    if (!uid) {
+    if (!uid || !HAS_BACKEND) {
       setProfile(null);
       setIsAdmin(false);
       return;
@@ -43,6 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
+    if (!HAS_BACKEND) return;
     let active = true;
     const { data: sub } = supabase.auth.onAuthStateChange((_event, next) => {
       if (!active) return;
@@ -69,7 +71,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       isAdmin,
       refreshProfile: () => load(session?.user.id),
       signOut: async () => {
-        await supabase.auth.signOut();
+        if (HAS_BACKEND) await supabase.auth.signOut();
       },
     }),
     [loading, session, profile, isAdmin],
